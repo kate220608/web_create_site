@@ -19,5 +19,19 @@ def print_list():
     return render_template("cabin_list.html", names=names)
 
 
+@app.route('/table/<sex>/<age>')
+def show_cabin(sex, age):
+    css = url_for('static', filename='css/style.css')
+    if sex == "male":
+        img_1 = url_for('static', filename='img/male.jpg')
+    else:
+        img_1 = url_for('static', filename='img/female.jpg')
+    if int(age) < 21:
+        img_2 = url_for('static', filename='img/young.jpg')
+    else:
+        img_2 = url_for('static', filename='img/old.jpg')
+    return render_template("cabin_look.html", img_1=img_1, img_2=img_2)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

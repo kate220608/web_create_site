@@ -3,10 +3,10 @@
 {% block title%}{% endblock %}
 
 {% block content %}
-    {% set names_list = {{names}} %}
+    {% set names_list = names %}
     <ul>
         {% for name in names_list %}
-        {{name}} - №{{ loop.index }} {% if loop.first %}- капитан корабля{% endif %}
+        {{name}} - Каюта №{{ loop.index }}{% if loop.first %}- капитан корабля{% endif %}<br/>
         {% endfor %}
     </ul>
 {% endblock %}

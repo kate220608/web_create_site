@@ -12,5 +12,12 @@ def print_answers():
                            education=education, profession=profession, sex=sex, motivation=motivation, ready=ready)
 
 
+@app.route('/distribution')
+def print_list():
+    css = url_for('static', filename='css/style.css')
+    names = ["ghntihgurhut", "rmjrg"]
+    return render_template("cabin_list.html", names=names)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
